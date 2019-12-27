@@ -1,11 +1,12 @@
-FROM python:3.6.6-stretch
-MAINTAINER Antonio Storni <antoniostorni@gmail.com>
+FROM python:3.5.9-stretch
+MAINTAINER Ricardo Tercero Solis <ricardo.tercero@r3s.com.mx>
 
 # Install node prereqs, nodejs and yarn
 # Ref: https://deb.nodesource.com/setup_10.x
 # Ref: https://yarnpkg.com/en/docs/install
 RUN \
   apt-get update && \
+  apt-get install -y libpython3.5-dev && \
   apt-get install -yqq apt-transport-https
 RUN \
   echo "deb https://deb.nodesource.com/node_10.x stretch main" > /etc/apt/sources.list.d/nodesource.list && \
